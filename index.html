@@ -70,6 +70,7 @@
                     Your Gateway to
                     <span id="changing-word">Industrial Excellence</span>
                 </h2>
+                <p style="color:white">Explore our latest machinery solutions today</p>
                 <button class="hero-btn">Get In Touch </button>
             </div>
         </div>
@@ -149,17 +150,21 @@
                                     <h4>Our Vision </h4>
                                 </div>
 
-                                    <p class="para-content">To be a global leader in engineering and technology by providing innovative, reliable, and sustainable industrial solutions that empower businesses and contribute to building a stronger future.</p>
+                                <p class="para-content">To be a global leader in engineering and technology by providing
+                                    innovative, reliable, and sustainable industrial solutions that empower businesses
+                                    and contribute to building a stronger future.</p>
 
                             </div>
                         </div>
                         <div class="line">
-                                 <div class="box">
-                                    <div class="text-content">
+                            <div class="box">
+                                <div class="text-content">
                                     <i class="fa-solid fa-earth-americas"></i>
                                     <h4>Our mission </h4>
                                 </div>
-                                <p class="para-content">To design, manufacture, and deliver high-quality machinery and turnkey plants with precision, transparency, and customer-centric service, ensuring long-lasting partnerships .</p>
+                                <p class="para-content">To design, manufacture, and deliver high-quality machinery and
+                                    turnkey plants with precision, transparency, and customer-centric service, ensuring
+                                    long-lasting partnerships .</p>
 
                             </div>
                         </div>
@@ -167,73 +172,105 @@
                 </div>
                 <div class="stats">
 
-                
-                <div class="stats-side flex">
 
-                    <div class="stat-box">
-                        <h2 class="statnum">
-                            25 +
-                        </h2>
-                        <h3>
-                            Years Of Experience
-                        </h3>
-                    </div>
-                    <div class="stat-box">
-                        <h2 class="statnum">
-                            89 %
-                        </h2>
-                        <h3>
-                            Happy Clients
-                        </h3>
-                    </div>
-                    <div class="stat-box stbox">
-                        <h2 class="statnum">
-                            2,415
-                        </h2>
-                        <h3>
-                            Projects Done
-                        </h3>
-                    </div>
+                    <div class="stats-side flex">
 
-                </div>
+                        <div class="stat-box">
+                            <h2 class="statnum" data-val="25" data-unit="+">
+                                00 
+                            </h2>
+                            
+                            <h3>
+                                Years Of Experience
+                            </h3>
+                        </div>
+                        <div class="stat-box" >
+                            <h2 class="statnum" data-val="89" data-unit="%">
+                                00 
+                            </h2>
+                            <h3>
+                                Happy Clients
+                            </h3>
+                        </div>
+                        <div class="stat-box stbox" >
+                            <h2 class="statnum" data-val="2415">
+                                0,000
+                            </h2>
+                            <h3>
+                                Projects Done
+                            </h3>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
 
-    <script>
-        const words = [
-            "Industrial Excellence",
-            "Smart Innovation",
-            "Modern Engineering",
-            "Precision Solutions"
-        ];
+   <script>
+const values = document.querySelectorAll(".statnum");
+const duration = 3000; // 3 seconds
+const wordElement = document.getElementById("changing-word");
 
-        let index = 0;
-        const wordElement = document.getElementById("changing-word");
+// Hero changing words
+const words = [
+    "Industrial Excellence",
+    "Smart Innovation",
+    "Modern Engineering",
+    "Precision Solutions"
+];
 
-        function changeWord() {
+let index = 0;
+function changeWord() {
+    wordElement.classList.remove("fade-in", "fade-out");
+    wordElement.classList.add("fade-out");
+    setTimeout(() => {
+        index = (index + 1) % words.length;
+        wordElement.textContent = words[index];
+        void wordElement.offsetWidth;
+        wordElement.classList.remove("fade-out");
+        wordElement.classList.add("fade-in");
+    }, 400);
+}
+setInterval(changeWord, 3000);
 
-            wordElement.classList.remove("fade-in", "fade-out");
+// Function to animate counter
+function animateCounter(value) {
+    const endValue = parseInt(value.getAttribute("data-val"));
+    const unit = value.getAttribute("data-unit") || "";
+    let start = 0;
+    const duration = 2000; // 3 seconds
+    const stepTime = 16; // ~60fps
+    const step = endValue / (duration / stepTime);
 
-            wordElement.classList.add("fade-out");
-
-            setTimeout(() => {
-
-                index = (index + 1) % words.length;
-                wordElement.textContent = words[index];
-
-                void wordElement.offsetWidth;
-
-                wordElement.classList.remove("fade-out");
-                wordElement.classList.add("fade-in");
-
-            }, 400);
+    function update() {
+        start += step;
+        if (start >= endValue) {
+            value.innerHTML = endValue.toLocaleString() + unit;
+        } else {
+            value.innerHTML = Math.floor(start).toLocaleString() + unit;
+            requestAnimationFrame(update);
         }
+    }
 
-        setInterval(changeWord, 3000);
-    </script>
+    requestAnimationFrame(update);
+}
+
+
+const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            obs.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+values.forEach(value => observer.observe(value));
+
+</script>
+
 
 </body>
 
