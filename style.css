@@ -243,8 +243,119 @@
     opacity: 0.5;
 }
 .about{
-    margin-top: 50px;
+    margin-top: 30px;
+    flex-direction: column;
 }
+
+.about-con{
+    margin-top: 20px;
+    max-width: 1200px;
+    width: 100%;
+    gap: 70px;
+    padding-top: 10px;
+
+}
+.image-side{
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+.image-side img{
+    width: 100%;
+    border-radius: 20px;
+
+    height: 400px;
+    object-fit: cover;
+
+}
+.stats-side{
+    max-width: 200px;
+    width: 100%;
+    flex-direction: column;
+    gap: 30px;
+
+
+}
+.stat-box{
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    padding: 0px 10px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    flex-direction: column;
+    font-family: var(--mainfonts);
+    height:150px;
+    background-color: #f2a900ae;
+}
+.stat-box h2{
+    font-size: 30px !important;
+}
+.stat-box h3{
+        font-size: 17px ;
+        font-weight: 500;
+}
+
+.mission-container{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.activeline{
+    border-top: 3px solid var(--primary-color) !important;
+}
+.activebox{
+    background-color: #f2a900c1 !important;
+
+}
+.line{
+     max-width: 350px;
+    width: 100%;
+    border-top: 3px solid gray; 
+}
+.box{
+    max-width: 350px;
+    width: 100%;
+    margin-top: 30px;
+    height: 150px;
+    border-radius: 5px;
+    background-color:rgba(128, 128, 128, 0.71);
+}
+.text-content{
+    color: white;
+    padding-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    font-family: var(--subfonts);
+    gap: 10px;
+}
+.text-content h4{
+    font-size: 22px;
+}
+.text-content i{
+    font-size: 22px;
+}
+.para-content{
+    color: white;
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
 @keyframes autorun{
     from{
         transform: translateX(0);
@@ -317,6 +428,9 @@
         display: block;    
         white-space: nowrap; 
     }
+    .stbox{
+        display: none;
+    }
     .heading{
         padding-top: 25px;
         font-size: 24px;
@@ -324,5 +438,44 @@
 
     .slider{
         padding-top: 25px;
+    }
+    .why-container{
+        flex-direction: column;
+    }
+    .image-side img{
+        height: 300px;
+        border-radius: 0;
+    }
+    .about-con{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .stats-side{
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 5px;
+        width: 100%;
+        max-width: 600px;
+        padding: 0px 10px;
+    }
+    .box{
+        max-width: 400px;
+        margin-top: 20px;
+    }
+    .mission-container{
+        padding: 0px 10px;
+        flex-direction: column;
+        gap: 0px;
+    }
+    .line,.activeline{
+        border-top: none !important;
+    }
+
+    .stat-box h3{
+        font-size: 15px;
+    }
+    .stat-box h2{
+        font-size: 15px;
     }
 }
