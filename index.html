@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanizer - Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <section class="nav">
+        <div class="social-nav">
+            <div class="s-icons flex">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+            <div class="p-details flex">
+                <div class="detail-container flex items-c">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h3>sales.mechanizer@gmail.com</h3>
+                </div>
+                <div class="detail-container flex items-c">
+                    <i class="fa-solid fa-phone"></i>
+                    <h3>+91 9909972221</h3>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="main-nav flex items-c justify-sb">
+            <div class="menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="logo">
+                <img src="./Assets/Images/logo.png" alt="">
+            </div>
+            <div class="links">
+                <a href="" class="active">Home</a>
+                <a href="">About</a>
+                <a href="">Gallery</a>
+
+                <a href="">Projects</a>
+                <button class="contact">Contact Us </button>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="hero-section">
+            <video src="./Assets/Videos/Hero.mp4" muted autoplay loop></video>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-container flex items-c">
+                <h2 class="hero-heading">
+                    Your Gateway to
+                    <span id="changing-word">Industrial Excellence</span>
+                </h2>
+                <button class="hero-btn">Get In Touch </button>
+            </div>
+        </div>
+
+    </section>
+    <section>
+        <div class=" heading flex items-c justify-c">
+            <h3> Explore Our Products </h3>
+            <h5>Advanced machinery. Reliable results</h5>
+
+        </div>
+        <div class="slider" style="
+            --width:300px;
+            --height:400px;
+            --quantity:8;
+            --gap:30px;
+        ">
+
+            <div class="items">
+                <div class="card" style="--pos:1">
+                    <img src="./Assets/Images/productone.jpeg" alt="">
+
+                </div>
+                <div class="card" style="--pos:2">
+                    <img src="./Assets/Images/producttwo.jpg" alt="">
+
+
+                </div>
+                <div class="card"style="--pos:3">
+                    <img src="./Assets/Images/productthree.jpg" alt="">
+
+
+                </div>
+                <div class="card"style="--pos:4">
+                    <img src="./Assets/Images/productfour.jpg" alt="">
+
+                </div>
+                <div class="card" style="--pos:5">
+                    <img src="./Assets/Images/productone.jpeg" alt="">
+
+
+                </div>
+                <div class="card" style="--pos:6">
+                    <img src="./Assets/Images/producttwo.jpg" alt="">
+
+
+                </div>
+                <div class="card"style="--pos:7">
+                    <img src="./Assets/Images/productthree.jpg" alt="">
+
+
+                </div>
+                <div class="card"style="--pos:8">
+                    <img src="./Assets/Images/productfour.jpg" alt="">
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section>
+        <div class="about">
+
+        </div>
+    </section>
+
+
+    <script>
+        const words = [
+            "Industrial Excellence",
+            "Smart Innovation",
+            "Modern Engineering",
+            "Precision Solutions"
+        ];
+
+        let index = 0;
+        const wordElement = document.getElementById("changing-word");
+
+        function changeWord() {
+
+            wordElement.classList.remove("fade-in", "fade-out");
+
+            wordElement.classList.add("fade-out");
+
+            setTimeout(() => {
+
+                index = (index + 1) % words.length;
+                wordElement.textContent = words[index];
+
+                void wordElement.offsetWidth;
+
+                wordElement.classList.remove("fade-out");
+                wordElement.classList.add("fade-in");
+
+            }, 400);
+        }
+
+        setInterval(changeWord, 3000);
+    </script>
+
+</body>
+
+</html>
