@@ -177,22 +177,22 @@
 
                         <div class="stat-box">
                             <h2 class="statnum" data-val="25" data-unit="+">
-                                00 
+                                00
                             </h2>
-                            
+
                             <h3>
                                 Years Of Experience
                             </h3>
                         </div>
-                        <div class="stat-box" >
+                        <div class="stat-box">
                             <h2 class="statnum" data-val="89" data-unit="%">
-                                00 
+                                00
                             </h2>
                             <h3>
                                 Happy Clients
                             </h3>
                         </div>
-                        <div class="stat-box stbox" >
+                        <div class="stat-box stbox">
                             <h2 class="statnum" data-val="2415">
                                 0,000
                             </h2>
@@ -207,69 +207,179 @@
         </div>
     </section>
 
+    <section style="margin-top: 60px;">
+        <div class=" heading flex items-c justify-c">
+            <h3> Why Choose Us </h3>
+            <h5>World class quality is our priority</h5>
 
-   <script>
-const values = document.querySelectorAll(".statnum");
-const duration = 3000; // 3 seconds
-const wordElement = document.getElementById("changing-word");
+        </div>
+        <div class=" servicesec flex justify-c ">
+            <div class="why-sec flex  justify-sb ">
+                <div class="text-sec flex">
+                    <button style="width: 100%; height: 50px; background-color: #f2a900c1; border-radius: 5px;">
+                        <div class="flex items-c justify-sb whybox ">
+                            <div style="color:white;gap:10px;" class="flex items-c">
+                                <i class="fa-solid fa-gear"> </i>
+                                <span style="color: white; font-size: 18px;">
+                                    Extended Equipment Lifespan</span>
+                            </div>
+                            <div style="color: white;">
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
 
-// Hero changing words
-const words = [
-    "Industrial Excellence",
-    "Smart Innovation",
-    "Modern Engineering",
-    "Precision Solutions"
-];
+                        </div>
 
-let index = 0;
-function changeWord() {
-    wordElement.classList.remove("fade-in", "fade-out");
-    wordElement.classList.add("fade-out");
-    setTimeout(() => {
-        index = (index + 1) % words.length;
-        wordElement.textContent = words[index];
-        void wordElement.offsetWidth;
-        wordElement.classList.remove("fade-out");
-        wordElement.classList.add("fade-in");
-    }, 400);
-}
-setInterval(changeWord, 3000);
+                    </button>
+                    <button style="width: 100%; height: 50px; background-color: #f2a900c1; border-radius: 5px;">
+                        <div class="flex items-c justify-sb whybox ">
+                            <div style="color:white;gap:10px;" class="flex items-c">
+                                <i class="fa-solid fa-building-shield"></i>
+                                <span style="color: white; font-size: 18px;">
+                                    Improved Safety Standards</span>
+                            </div>
+                            <div style="color: white;">
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
 
-// Function to animate counter
-function animateCounter(value) {
-    const endValue = parseInt(value.getAttribute("data-val"));
-    const unit = value.getAttribute("data-unit") || "";
-    let start = 0;
-    const duration = 2000; // 3 seconds
-    const stepTime = 16; // ~60fps
-    const step = endValue / (duration / stepTime);
+                        </div>
 
-    function update() {
-        start += step;
-        if (start >= endValue) {
-            value.innerHTML = endValue.toLocaleString() + unit;
-        } else {
-            value.innerHTML = Math.floor(start).toLocaleString() + unit;
+                    </button>
+                    <button style="width: 100%; height: 50px; background-color: #f2a900c1; border-radius: 5px;">
+                        <div class="flex items-c justify-sb whybox ">
+                            <div style="color:white;gap:10px;" class="flex items-c">
+                                <i class="fa-solid fa-users"></i>
+                                <span style="color: white; font-size: 18px;">
+
+                                    Enhanced Customer Satisfaction</span>
+                            </div>
+                            <div style="color: white;">
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+
+                        </div>
+
+                    </button>
+                    <button style="width: 100%; height: 50px; background-color: #f2a900c1; border-radius: 5px;">
+                        <div class="flex items-c justify-sb whybox ">
+                            <div style="color:white;gap:10px;" class="flex items-c">
+                                <i class="fa-solid fa-recycle"></i>
+                                <span style="color: white; font-size: 18px;">
+
+                                     Environmental Sustainability</span>
+                            </div>
+                            <div style="color: white;">
+                                <i class="fa-solid fa-angle-down"></i>
+
+                            </div>
+
+                        </div>
+
+                    </button>
+                </div>
+                <div class="image-sec">
+                    <img src="./Assets/Images/service.jpg" alt="">
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+
+    <div class="contactsec">
+            <img src="./Assets/Images/contact.jpg" alt="">
+            <div style="position: absolute;" class="contacthead">
+                <h3> Get In Touch</h3>
+                <p>We’re here to answer your questions and help your business grow.</p>
+            </div>
+            <div style="position: absolute;" class="contactform">
+                <div class="formhead">
+                    Send us a message
+                    <p>If you have any questions or would like to book a session please contact us.</p>
+                </div>
+                <div class="fields">
+                    <input type="text" placeholder="Enter Your Name *">
+                    <input type="text" placeholder="Enter Your Email *">
+                </div>
+                <div class="fields">
+                    <input type="text" name="" id="" placeholder="Enter Your Interest Of Service *">
+                    <input type="text" name="" id="" placeholder="Enter Your Number *">
+                </div>
+                <div class="field">
+                    <textarea name="" id="" placeholder="Enter Your Message "></textarea>
+                </div>
+                <div class="butt">
+                     <button class="formsubmit">
+                        Submit 
+                </button>
+                </div>
+               
+            </div>
+    </div>
+
+
+    <script>
+        const values = document.querySelectorAll(".statnum");
+        const duration = 3000; // 3 seconds
+        const wordElement = document.getElementById("changing-word");
+
+        // Hero changing words
+        const words = [
+            "Industrial Excellence",
+            "Smart Innovation",
+            "Modern Engineering",
+            "Precision Solutions"
+        ];
+
+        let index = 0;
+        function changeWord() {
+            wordElement.classList.remove("fade-in", "fade-out");
+            wordElement.classList.add("fade-out");
+            setTimeout(() => {
+                index = (index + 1) % words.length;
+                wordElement.textContent = words[index];
+                void wordElement.offsetWidth;
+                wordElement.classList.remove("fade-out");
+                wordElement.classList.add("fade-in");
+            }, 400);
+        }
+        setInterval(changeWord, 3000);
+
+        // Function to animate counter
+        function animateCounter(value) {
+            const endValue = parseInt(value.getAttribute("data-val"));
+            const unit = value.getAttribute("data-unit") || "";
+            let start = 0;
+            const duration = 2000; // 3 seconds
+            const stepTime = 16; // ~60fps
+            const step = endValue / (duration / stepTime);
+
+            function update() {
+                start += step;
+                if (start >= endValue) {
+                    value.innerHTML = endValue.toLocaleString() + unit;
+                } else {
+                    value.innerHTML = Math.floor(start).toLocaleString() + unit;
+                    requestAnimationFrame(update);
+                }
+            }
+
             requestAnimationFrame(update);
         }
-    }
-
-    requestAnimationFrame(update);
-}
 
 
-const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            obs.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
 
-values.forEach(value => observer.observe(value));
+        values.forEach(value => observer.observe(value));
 
-</script>
+    </script>
 
 
 </body>
